@@ -35,7 +35,7 @@ def insert_safe():
     data = request.get_json()
 
     safe_collection = base_collection.with_options(
-        write_concern=WriteConcern("majority")
+        write_concern=WriteConcern(w="majority")
     )
 
     result = safe_collection.insert_one(data)
